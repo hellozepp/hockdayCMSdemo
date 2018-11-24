@@ -1,6 +1,5 @@
 package com.daojia.hockday.controller.admin;
 
-import com.daojia.hockday.controller.ArticleController;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class AdminController {
-    private static final Logger logger = LoggerFactory.getLogger(ArticleController.class);
+    private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
 
     /**
      * 1:可用 2:不可用
@@ -24,7 +23,7 @@ public class AdminController {
      */
     @GetMapping(value = "/admin/groupContent")
     public Integer groupContent(String articleContent) {
-        if (StringUtils.isBlank(articleContent)){
+        if (StringUtils.isBlank(articleContent)) {
             return 2;
         }
         return 1;
